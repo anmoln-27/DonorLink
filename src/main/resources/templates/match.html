@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Matches</title>
+</head>
+<body>
+
+<h2>Matching Donors</h2>
+
+<p>DEBUG: size = <span th:text="${#lists.size(matches)}"></span></p>
+
+<ul>
+    <li th:each="x : ${matches}" th:text="${x.name + ' | ' + x.bloodGroup + ' | ' + x.city}"></li>
+</ul>
+
+<hr>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Blood Group</th>
+        <th>City</th>
+    </tr>
+    <tr th:each="d : ${matches}">
+        <td th:text="${d.name}"></td>
+        <td th:text="${d.bloodGroup}"></td>
+        <td th:text="${d.city}"></td>
+    </tr>
+</table>
+
+</body>
+
+</html>
